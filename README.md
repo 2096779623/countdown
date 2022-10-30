@@ -1,6 +1,6 @@
 # countdown
 
-基于fyne 的倒计时，用 Golang 编写
+基于fyne的倒计时程序，用 Golang 编写
 
 # 用法
 
