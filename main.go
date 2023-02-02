@@ -17,7 +17,7 @@ import (
 func main() {
 	//~~屎山~~
 	if len(os.Args) <= 2 {
-		fmt.Printf("请提供参数！\n example: countdown.exe 2023-01-01T00:00:00+08:00 元旦\n")
+		fmt.Printf("请提供参数！\n example: countdown 2024-01-01T00:00:00+08:00 元旦\n")
 		os.Exit(1)
 	}
 	//设置楷体为中文字体
