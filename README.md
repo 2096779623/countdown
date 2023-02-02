@@ -4,8 +4,17 @@
 
 # 用法
 
-```bash
+## Windows
+
+```cmd
 countdown.exe 2024-01-01T00:00:00+08:00 元旦
+```
+
+## Linux
+
+```bash
+export FYNE_FONT=任意一个中文字体的路径
+countdown 2024-01-01T00:00:00+08:00 元旦
 ```
 
 # 效果图
