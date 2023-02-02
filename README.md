@@ -16,6 +16,8 @@ countdown.exe 2024-01-01T00:00:00+08:00 元旦
 
 ## Linux
 
+![image](https://user-images.githubusercontent.com/57583560/216264948-58624999-4739-4ea5-86e1-6ecaee7ddda7.png)
+
 # TODO
 
 - [ ] [移动窗口至任意位置](https://github.com/fyne-io/fyne/issues/311)
