@@ -1,0 +1,32 @@
+name: build
+on:
+  push:
+  pull_request:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: '^1.19'
+      - name: Install dependencies
+        run: |
+          go install github.com/fyne-io/fyne-cross@latest
+      - name: Download go mod
+        run: |
+          go mod tidy
+          mkdir -p output
+      - name: Build Windows
+        run: |
+          $(go env GOPATH)/bin/fyne-cross windows -arch=* -app-id countdown --no-cache
+      - name: Build Linux
+        run: |
+          $(go env GOPATH)/bin/fyne-cross linux -arch=* -app-id countdown ./main.go --no-cache
+      - name: Upload
+        uses: actions/upload-artifact@v3
+        with:
+          name: countdown
+          path: fyne-cross
