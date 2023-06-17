@@ -42,7 +42,6 @@ func main() {
 		)
 		desk.SetSystemTrayMenu(menu)
 	}
-
 	w.SetContent(widget.NewLabel("Fyne系统托盘"))
 	w.SetCloseIntercept(func() {
 		w.Hide()
@@ -51,8 +50,8 @@ func main() {
 	clock := widget.NewLabel("")
 	//标题
 	w.SetTitle("countdown")
-	//设置了也没啥用的粗体，所以//了
-	//clock.TextStyle.Bold = true
+	//粗体
+	clock.TextStyle.Bold = true
 	updateTime(clock)
 	w.SetContent(clock)
 
@@ -65,7 +64,6 @@ func main() {
 	glfw.WindowHint(glfw.TransparentFramebuffer, glfw.True)
 	//窗口置顶
 	//glfw.WindowHint(glfw.Floating, glfw.True)
-
 	w.ShowAndRun()
 }
 
@@ -74,14 +72,13 @@ func newWindow(a fyne.App) fyne.Window {
 	if drv, ok := a.Driver().(desktop.Driver); ok {
 		return drv.CreateSplashWindow()
 	}
-	return a.NewWindow("")
+	return a.NewWindow("countdown")
 }
 
 func updateTime(clock *widget.Label) {
 
 	//上海时区
 	loc, _ := time.LoadLocation("Asia/Shanghai")
-	//暂时注释
 	v, err := time.ParseInLocation(time.RFC3339, os.Args[1], loc)
 	if err != nil {
 		fmt.Println(err)
