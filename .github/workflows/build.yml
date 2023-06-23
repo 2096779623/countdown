@@ -14,7 +14,7 @@ jobs:
           go-version: '^1.19'
       - name: Install dependencies
         run: |
-          go install github.com/fyne-io/fyne-cross@latest
+          go install github.com/fyne-io/fyne-cross@v1.3.0
       - name: Download go mod
         run: |
           go mod tidy
