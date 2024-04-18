@@ -21,7 +21,7 @@ jobs:
           mkdir -p output
       - name: Build Windows
         run: |
-          $(go env GOPATH)/bin/fyne-cross windows -arch=* -app-id countdown --no-cache
+          $(go env GOPATH)/bin/fyne-cross windows -arch=* -app-id countdown --no-cache -ldflags "-H windowsgui -w -s"
       - name: Build Linux
         run: |
           $(go env GOPATH)/bin/fyne-cross linux -arch=* -app-id countdown ./main.go --no-cache
